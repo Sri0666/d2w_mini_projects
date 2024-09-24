@@ -2,7 +2,13 @@ from org.transcrypt.stubs.browser import *
 import random
 
 def gen_random_int(number, seed):
-	pass
+	random.seed(seed)
+	my_list = []
+	for i in range(number):
+		my_list.append(i)
+	random.shuffle(my_list)
+	return my_list
+
 
 def generate():
 	number = 10
@@ -10,20 +16,23 @@ def generate():
 
 	# call gen_random_int() with the given number and seed
 	# store it to the variable array
-	pass
+	array = gen_random_int(number, seed)
 
-	array = None
+	array_str = ''
 	# convert the items into one single string 
 	# the number should be separated by a comma
 	# and a full stop should end the string.
-	pass
+	for i in range(len(array)):
+		if i == len(array)-1:
+			array_str += str(array[i]) +'.'
+		else:
+			array_str += str(array[i])+','
 
-	array_str = None
-
+	
 	# This line is to placed the string into the HTML
 	# under div section with the id called "generate"	
-	document.getElementById("generate").innerHTML = array_str
-
+	document.getElementById('generate').innerHTML = array_str
+	
 
 def sortnumber1():
 	'''	This function is used in Exercise 1.
@@ -35,7 +44,9 @@ def sortnumber1():
 		- call your sort function, either bubble sort or insertion sort
 		- create a string of the sorted numbers and store it in array_str
 	'''
+	document.getElementById(id='generate').innerHTML
 	pass
+
 
 	array_str = None
 	
